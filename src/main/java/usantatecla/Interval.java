@@ -12,6 +12,7 @@ public class Interval {
     }
 
     public boolean isIntersected(Interval other) {
+        assert other != null;
         return false;
     }
 
