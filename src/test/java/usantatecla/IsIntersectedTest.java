@@ -4,6 +4,8 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.jupiter.api.BeforeAll;
 
+import static org.junit.Assert.assertTrue;
+
 public class IsIntersectedTest {
 
     private Interval interval;
@@ -17,6 +19,12 @@ public class IsIntersectedTest {
     public void testGivenIntervalWhenCheckIfIsIntersectedWithNullIntervalThenAssertionError() {
         Interval nullInterval = null;
         boolean isIntersected = this.interval.isIntersected(nullInterval);
+    }
+
+    @Test
+    public void testGivenIntervalWhenCheckIfIsIntersectedWithSameIntervalThenReturnTrue(){
+        boolean isIntersected = this.interval.isIntersected(this.interval);
+        assertTrue(isIntersected);
     }
 
 }
