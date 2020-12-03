@@ -22,7 +22,8 @@ public class IsIntersectedTest {
 
     @Test
     public void testGivenIntervalWhenCheckIfIsIntersectedWithSameIntervalThenReturnTrue() {
-        boolean isIntersected = this.interval.isIntersected(this.interval);
+        Interval sameInterval = new IntervalBuilder().open(1).open(10).build();
+        boolean isIntersected = this.interval.isIntersected(sameInterval);
         assertTrue(isIntersected);
     }
 
