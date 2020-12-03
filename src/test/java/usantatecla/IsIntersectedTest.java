@@ -33,4 +33,11 @@ public class IsIntersectedTest {
         assertTrue(isIntersected);
     }
 
+    @Test
+    public void testGivenIntervalWhenCheckIfIsIntersectedWithSameMinThenReturnTrue() {
+        Interval sameMinInterval = new IntervalBuilder().open(1).open(4).build();
+        boolean isIntersected = this.interval.isIntersected(sameMinInterval);
+        assertTrue(isIntersected);
+    }
+
 }
