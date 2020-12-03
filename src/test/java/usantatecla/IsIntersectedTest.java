@@ -17,12 +17,11 @@ public class IsIntersectedTest {
 
     @Test(expected = AssertionError.class)
     public void testGivenIntervalWhenCheckIfIsIntersectedWithNullIntervalThenAssertionError() {
-        Interval nullInterval = null;
-        boolean isIntersected = this.interval.isIntersected(nullInterval);
+        this.interval.isIntersected(null);
     }
 
     @Test
-    public void testGivenIntervalWhenCheckIfIsIntersectedWithSameIntervalThenReturnTrue(){
+    public void testGivenIntervalWhenCheckIfIsIntersectedWithSameIntervalThenReturnTrue() {
         boolean isIntersected = this.interval.isIntersected(this.interval);
         assertTrue(isIntersected);
     }
