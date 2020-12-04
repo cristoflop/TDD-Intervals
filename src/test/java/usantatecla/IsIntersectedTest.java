@@ -46,5 +46,12 @@ public class IsIntersectedTest {
         boolean isIntersected = this.interval.isIntersected(withinInterval);
         assertTrue(isIntersected);
     }
+    
+    @Test
+    public void testGivenIntervalWhenCheckIfIsIntersectedWithEnvelopingIntervalThenReturnTrue() {
+        Interval withinInterval = new IntervalBuilder().closed(-1).closed(14).build();
+        boolean isIntersected = this.interval.isIntersected(withinInterval);
+        assertTrue(isIntersected);
+    }
 
 }
