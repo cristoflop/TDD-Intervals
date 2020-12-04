@@ -20,6 +20,8 @@ public class IsIntersectedTest {
         this.interval.isIntersected(null);
     }
 
+    // ---(-----)---
+    // ---(-----)---
     @Test
     public void testGivenIntervalWhenCheckIfIsIntersectedWithSameIntervalThenReturnTrue() {
         Interval sameInterval = new IntervalBuilder().open(1).open(10).build();
@@ -27,6 +29,8 @@ public class IsIntersectedTest {
         assertTrue(isIntersected);
     }
 
+    // ---(-----)---
+    // ------(--)---
     @Test
     public void testGivenIntervalWhenCheckIfIsIntersectedWithSameMaxThenReturnTrue() {
         Interval sameMaxInterval = new IntervalBuilder().open(7).open(10).build();
@@ -34,6 +38,8 @@ public class IsIntersectedTest {
         assertTrue(isIntersected);
     }
 
+    // ---(-----)---
+    // ---(--)------
     @Test
     public void testGivenIntervalWhenCheckIfIsIntersectedWithSameMinThenReturnTrue() {
         Interval sameMinInterval = new IntervalBuilder().open(1).open(4).build();
@@ -41,6 +47,8 @@ public class IsIntersectedTest {
         assertTrue(isIntersected);
     }
 
+    // ---(-----)---
+    // ----(--)-----
     @Test
     public void testGivenIntervalWhenCheckIfIsIntersectedWithWithinIntervalThenReturnTrue() {
         Interval withinInterval = new IntervalBuilder().closed(2).closed(4).build();
@@ -48,6 +56,8 @@ public class IsIntersectedTest {
         assertTrue(isIntersected);
     }
 
+    // ---(-----)---
+    // -(---------)-
     @Test
     public void testGivenIntervalWhenCheckIfIsIntersectedWithEnvelopingIntervalThenReturnTrue() {
         Interval envelopingInterval = new IntervalBuilder().closed(-1).closed(14).build();
@@ -55,7 +65,8 @@ public class IsIntersectedTest {
         assertTrue(isIntersected);
     }
 
-
+    // ---(-----)---
+    // -(----)------
     @Test
     public void testGivenIntervalWhenCheckIfIsIntersectedIntersectingInTheLeftThenReturnTrue() {
         Interval leftIntersectInterval = new IntervalBuilder().closed(-1).closed(6).build();
@@ -63,6 +74,8 @@ public class IsIntersectedTest {
         assertTrue(isIntersected);
     }
 
+    // ---(-----)---
+    // ------(----)-
     @Test
     public void testGivenIntervalWhenCheckIfIsIntersectedIntersectingInTheRightThenReturnTrue() {
         Interval rightIntersectInterval = new IntervalBuilder().closed(4).closed(60).build();
@@ -70,6 +83,8 @@ public class IsIntersectedTest {
         assertTrue(isIntersected);
     }
 
+    // ---(-----)---
+    // ----------(--)
     @Test
     public void testGivenIntervalWhenCheckIfIsIntersectedWithNonIntersectingIntervalInTheRightThenReturnFalse() {
         Interval nonIntersectingInterval = new IntervalBuilder().closed(20).closed(60).build();
@@ -77,6 +92,8 @@ public class IsIntersectedTest {
         assertFalse(isIntersected);
     }
 
+    // -----(-----)---
+    // -(--)----------
     @Test
     public void testGivenIntervalWhenCheckIfIsIntersectedWithNonIntersectingIntervalInTheLeftThenReturnFalse() {
         Interval nonIntersectingInterval = new IntervalBuilder().closed(-60).closed(-20).build();
