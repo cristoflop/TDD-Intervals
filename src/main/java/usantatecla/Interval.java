@@ -13,12 +13,7 @@ public class Interval {
 
     public boolean isIntersected(Interval other) {
         assert other != null;
-        boolean isIntersected = false;
-        if (this.equals(other))
-            isIntersected = true;
-        else if (this.include(other) || other.include(this))
-            isIntersected = true;
-        return isIntersected;
+        return this.equals(other) || this.include(other) || other.include(this);
     }
 
     public boolean include(Interval other) {
