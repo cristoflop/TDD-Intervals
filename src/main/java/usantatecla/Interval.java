@@ -21,6 +21,10 @@ public class Interval {
             isIntersected = true;
         else if (this.include(other.max.getValue()))
             isIntersected = true;
+        else if(other.include(this.min.getValue()))
+            isIntersected = true;
+        else if(other.include(this.max.getValue()))
+            isIntersected = true;
 
         return isIntersected;
     }
