@@ -101,4 +101,13 @@ public class IsIntersectedTest {
         assertFalse(isIntersected);
     }
 
+    // -(--)--------
+    // -(-------)---
+    @Test
+    public void testGivenIntervalWhenCheckIfIsIntersectedWithBiggerIntervalInTheRightThenReturnTrue() {
+        Interval envelopingInterval = new IntervalBuilder().closed(1).closed(14).build();
+        boolean isIntersected = this.interval.isIntersected(envelopingInterval);
+        assertTrue(isIntersected);
+    }
+
 }
