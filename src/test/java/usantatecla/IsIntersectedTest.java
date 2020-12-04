@@ -79,7 +79,7 @@ public class IsIntersectedTest {
 
     @Test
     public void testGivenIntervalWhenCheckIfIsIntersectedWithNonIntersectingIntervalInTheLeftThenReturnFalse() {
-        Interval nonIntersectingInterval = new IntervalBuilder().closed(-20).closed(-60).build();
+        Interval nonIntersectingInterval = new IntervalBuilder().closed(-60).closed(-20).build();
         boolean isIntersected = this.interval.isIntersected(nonIntersectingInterval);
         assertFalse(isIntersected);
     }
