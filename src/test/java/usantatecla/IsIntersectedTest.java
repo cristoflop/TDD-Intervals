@@ -3,6 +3,7 @@ package usantatecla;
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 public class IsIntersectedTest {
@@ -67,6 +68,13 @@ public class IsIntersectedTest {
         Interval rightIntersectInterval = new IntervalBuilder().closed(4).closed(60).build();
         boolean isIntersected = this.interval.isIntersected(rightIntersectInterval);
         assertTrue(isIntersected);
+    }
+
+    @Test
+    public void testGivenIntervalWhenCheckIfIsIntersectedWithNonIntersectingIntervalThenReturnFalse() {
+        Interval nonIntersectingInterval = new IntervalBuilder().closed(20).closed(60).build();
+        boolean isIntersected = this.interval.isIntersected(nonIntersectingInterval);
+        assertFalse(isIntersected);
     }
 
 }
