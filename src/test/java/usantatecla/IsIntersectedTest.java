@@ -62,4 +62,11 @@ public class IsIntersectedTest {
         assertTrue(isIntersected);
     }
 
+    @Test
+    public void testGivenIntervalWhenCheckIfIsIntersectedIntersectingInTheRightThenReturnTrue() {
+        Interval rightIntersectInterval = new IntervalBuilder().closed(4).closed(60).build();
+        boolean isIntersected = this.interval.isIntersected(rightIntersectInterval);
+        assertTrue(isIntersected);
+    }
+
 }
