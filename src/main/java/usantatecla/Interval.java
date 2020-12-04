@@ -16,9 +16,7 @@ public class Interval {
         boolean isIntersected = false;
         if (this.equals(other))
             isIntersected = true;
-        else if (this.include(other))
-            isIntersected = true;
-        else if (other.include(this))
+        else if (this.include(other) || other.include(this))
             isIntersected = true;
         return isIntersected;
     }
