@@ -40,4 +40,11 @@ public class IsIntersectedTest {
         assertTrue(isIntersected);
     }
 
+    @Test
+    public void testGivenIntervalWhenCheckIfIsIntersectedWithWithinIntervalThenReturnTrue() {
+        Interval withinInterval = new IntervalBuilder().closed(2).closed(4).build();
+        boolean isIntersected = this.interval.isIntersected(withinInterval);
+        assertTrue(isIntersected);
+    }
+
 }
