@@ -14,13 +14,14 @@ public class Interval {
     public boolean isIntersected(Interval other) {
         assert other != null;
         boolean isIntersected = false;
+
         if (this.equals(other))
             isIntersected = true;
-        else if (this.include(other.max.getValue()) || other.include((this.max.getValue()))) {
+        else if (this.include(other.min.getValue()))
             isIntersected = true;
-        } else if (this.include(other.min.getValue())) {
+        else if (this.include(other.max.getValue()))
             isIntersected = true;
-        }
+
         return isIntersected;
     }
 
