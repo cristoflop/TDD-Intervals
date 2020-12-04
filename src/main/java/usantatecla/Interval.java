@@ -16,11 +16,15 @@ public class Interval {
         boolean isIntersected = false;
         if (this.equals(other))
             isIntersected = true;
-        if (this.include(other.min.getValue()) || this.include(other.max.getValue()))
+        else if (this.include(other))
             isIntersected = true;
-        else if (other.include(this.min.getValue()) || other.include(this.max.getValue()))
+        else if (other.include(this))
             isIntersected = true;
         return isIntersected;
+    }
+
+    public boolean include(Interval other) {
+        return this.include(other.min.getValue()) || this.include(other.max.getValue());
     }
 
     public boolean include(double value) {
