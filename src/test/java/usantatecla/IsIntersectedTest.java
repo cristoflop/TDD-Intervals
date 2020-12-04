@@ -46,11 +46,19 @@ public class IsIntersectedTest {
         boolean isIntersected = this.interval.isIntersected(withinInterval);
         assertTrue(isIntersected);
     }
-    
+
     @Test
     public void testGivenIntervalWhenCheckIfIsIntersectedWithEnvelopingIntervalThenReturnTrue() {
-        Interval withinInterval = new IntervalBuilder().closed(-1).closed(14).build();
-        boolean isIntersected = this.interval.isIntersected(withinInterval);
+        Interval envelopingInterval = new IntervalBuilder().closed(-1).closed(14).build();
+        boolean isIntersected = this.interval.isIntersected(envelopingInterval);
+        assertTrue(isIntersected);
+    }
+
+
+    @Test
+    public void testGivenIntervalWhenCheckIfIsIntersectedIntersectingInTheLeftThenReturnTrue() {
+        Interval leftIntersectInterval = new IntervalBuilder().closed(-1).closed(6).build();
+        boolean isIntersected = this.interval.isIntersected(leftIntersectInterval);
         assertTrue(isIntersected);
     }
 
