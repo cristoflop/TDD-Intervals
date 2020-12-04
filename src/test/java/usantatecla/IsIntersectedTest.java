@@ -30,6 +30,24 @@ public class IsIntersectedTest {
     }
 
     // ---(-----)---
+    // ---[-----]---
+    @Test
+    public void testGivenIntervalWhenCheckIfIsIntersectedWithSameClosedIntervalThenReturnTrue() {
+        Interval sameInterval = new IntervalBuilder().closed(1).closed(10).build();
+        boolean isIntersected = this.interval.isIntersected(sameInterval);
+        assertTrue(isIntersected);
+    }
+
+    // ---[-----]---
+    // ---(-----)---
+    @Test
+    public void testGivenIntervalWhenCheckIfIsIntersectedWithSameOpenIntervalThenReturnTrue() {
+        Interval sameInterval = new IntervalBuilder().closed(1).closed(10).build();
+        boolean isIntersected = sameInterval.isIntersected(this.interval);
+        assertTrue(isIntersected);
+    }
+
+    // ---(-----)---
     // ------(--)---
     @Test
     public void testGivenIntervalWhenCheckIfIsIntersectedWithSameMaxThenReturnTrue() {
